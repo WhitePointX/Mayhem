@@ -1,0 +1,26 @@
+{
+  "name": "WP-GULP",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GULP task handler for a seamless WP workflow.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.0.0-rc1",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "lodash": "^3.3.1",
+    "node-bourbon": "^4.2.1-beta1",
+    "node-neat": "^1.7.1-beta1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Jankovic",
+  "license": "ISC"
+}
