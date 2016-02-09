@@ -1,0 +1,36 @@
+$body_background:#eee;
+$text_color:#444;
+
+//media
+$tablet:new-breakpoint(min-width 768px);
+$medium:new-breakpoint(min-width 992px);
+$large:new-breakpoint(min-width 1200px);
+
+//header
+$header_background_color:#FFF;
+
+
+//navigation
+$nav_background:#FFF;
+$nav_border:2px solid $header_color;
+$nav_color:#444;
+$nav_border_hover:2px solid $nav_color;
+$nav_subitem_background_hover:#666;
+$nav_subitem_color_hover:#eee;
+
+
+
+
+//responsive version variables
+
+  //navigation
+$nav_background_resp:#444;
+$nav_text_color_resp:#FFF;
+$header_color_resp:#aaa;
+$nav_border_resp:1px solid #333;
+$nav_text_color_active_resp:#000;
+$nav_background_color_active_resp:#FFF;
+$nav_text_color_hover_resp:#eee;
+$nav_background_color_hover_resp:#666;
+$menu_toggle_color:#444;
+

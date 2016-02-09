@@ -1,13 +1,15 @@
+//bourbon
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+//neat
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+@import 'common/variables';
+
+@import 'common/general';
+
+@import 'common/normalize';
+@import 'common/header';
+@import 'common/footer';
 @import 'common/nav';
+@import 'common/icons';
 
-
-body {
-  background:green;
-}
-.wat {
-  background:red;
-  transition:300ms;
-}
-.aleiou{
-	background:red;
-}

@@ -6,9 +6,8 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
+    cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
-
-    neat = require('node-neat').includePaths,
 
     scssSrc = "sass/**/*.scss";
 
@@ -32,19 +31,19 @@ gulp.task('uglify',function(){
 
 // Compile SASS
 gulp.task('sass', function() {
-  return gulp.src(scssSrc)
+  return gulp.src('sass/style.scss')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: ['styles'].concat(neat)
-    }))
-    .pipe(autoprefixer())
-    .pipe(sourcemaps.write())
+    .pipe(sass())
+    .pipe(autoprefixer())    
     .pipe(gulp.dest('css'))
+    .pipe(cssnano())     
+    .pipe(sourcemaps.write())     
+    .pipe(gulp.dest('css/min'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -62,4 +61,4 @@ gulp.task('watch', function() {
   gulp.watch("**/*.php", ['reload-html']);
 });
 
-gulp.task('default', ['uglify','sass', 'browser-sync', 'reload-html', 'watch']);
+gulp.task('default', ['uglify','sass','browser-sync', 'reload-html', 'watch']);

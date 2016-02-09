@@ -1,0 +1,45 @@
+.siteHeader{
+  @include clearfix;
+  background:$header_color_resp;
+}
+
+
+#logo {
+
+  padding:60px 0;
+  max-width:250px;
+  margin:0 auto;
+  img {
+    max-width:100%;
+  text-align:center;
+    padding:30px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 15px #333;
+
+  }
+}
+
+@include media($medium) {
+  .siteHeader {
+    background:$header_background_color;
+    .container {
+      position:relative;
+    }
+  }
+  #logo {
+    z-index:1100;
+    position:absolute;
+    left:30px;
+    top:0;
+    padding:0;
+    max-width:225px;
+    img {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+    }
+
+
+  }
+}
