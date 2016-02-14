@@ -1,0 +1,53 @@
+.footer_wrapper {
+  background:$footer_background_resp;
+  @include clearfix;
+  font-size:25px;
+  color:$footer_color;
+  padding:20px 0;
+  .container {
+
+
+  }
+  .company_name {
+    padding:0 10px;
+  }
+  .address {
+    font-size:17px;
+    padding:10px 10px;
+  }
+
+
+  .footer_contact {
+    float:right;
+
+    i {
+      padding:10px;
+    }
+    a {
+      text-decoration:none;
+      color:$footer_color;
+      transition:300ms;
+
+      &:hover {
+        opacity:0.6;
+      }
+    }
+  }
+}
+
+
+
+@include media ($medium)
+{
+  .footer_wrapper {
+    background:$footer_background;
+
+.foooter_contact {
+  i {
+    padding:15px;
+  }
+}
+
+  }
+
+}

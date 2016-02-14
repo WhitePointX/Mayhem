@@ -19,7 +19,12 @@ gulp.task('reload-html', function() {
  
 //uglify javascript
 gulp.task('uglify',function(){
-  gulp.src('js/common/**/*.js')
+
+    gulp.src([
+        // Bower
+        'bower_components/jquery/**/jquery.min.js',
+        //custom
+        'js/common/**/*.js'])
   .pipe(plumber())
   .pipe(concat('scripts.min.js'))
 .pipe(uglify())
@@ -50,15 +55,15 @@ gulp.task('sass', function() {
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(["html/**/*.html", "js/**/*.js", ], {
+  browserSync.init(["html/**/*.html", "js/**/*.js" ], {
     proxy: 'http://wordpress.ia/zavrsni_rad'
   });
 });
 
 gulp.task('watch', function() {
-  gulp.watch('js/*.js', ['uglify']);
+  gulp.watch('js/common/**/*.js', ['uglify']);
   gulp.watch(scssSrc, ['sass']);
   gulp.watch("**/*.php", ['reload-html']);
 });
 
-gulp.task('default', ['uglify','sass','browser-sync', 'reload-html', 'watch']);
+gulp.task('default', ['sass','browser-sync', 'reload-html', 'watch']);

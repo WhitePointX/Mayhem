@@ -1,5 +1,63 @@
 <?php get_header(); ?>
 
 
-<p class="wat"><i class="icon-menu"></i>asdaavvvvvvvvvvvvvvvvvvvvvvvvvv</p>
+<div class="container">
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+    content <br>
+</div>
+
 <?php get_footer(); ?>

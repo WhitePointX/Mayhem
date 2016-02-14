@@ -4,12 +4,13 @@
 
     position:fixed;
     background:$nav_background_resp;
-    top:60px;
+    top:67px;
     width:250px;
     bottom:0;
     right:-250px;
     transition:300ms;
     overflow-y:scroll;
+    z-index:100;
 
   ul{
     margin:0;
@@ -39,6 +40,11 @@
 
          li {
                a{ padding:15px 35px;}
+           ul {
+             a {
+               padding:15px 45px;
+             }
+           }
             }
 
     }}}}
@@ -48,9 +54,10 @@ label[for="menuToggle"] {
   position:fixed;
   top:20px;
   right:20px;
-  z-index:1000;
+
   color:$menu_toggle_color;
   font-size:30px;
+  cursor:pointer;
 }
 
 #menuToggle:checked + .nav{
@@ -64,34 +71,38 @@ label[for="menuToggle"] {
 .mainNav{
 
   .nav {
-    position:relative;
-    width:auto;
-    top:0;
-    bottom:auto;
+    position:absolute;
+    bottom:0;
     right:0;
-    left:0;
+    top:auto;
+    width:auto;
     overflow-y: visible;
-    background:white;
+    background: $header_background_color;
+
 
     ul {
-      float:right;
       font-size:0;
       li {
+
+
         display:inline-block;
-        margin-right:10px;
         position:relative;
         font-size:16px;
         &:last-child {margin-right:0;}
-        &:hover { ul { visibility: visible; opacity:1; transform: translateY(0) } }
+        &:hover { ul { visibility: visible; opacity:1; transform: translateY(0);
+
+        ul {visibility:hidden;opacity:0;}
+        } }
 
         a {
           color:$nav_color;
-          background: $header_color;
+          background: $header_background_color;
           padding:15px;
           border-bottom:$nav_border;
 
+
           &:hover {
-            background:$header_color;
+            background:$header_background_color;
             border-bottom:$nav_border_hover;
             color:$nav_color;
           }
@@ -107,15 +118,27 @@ label[for="menuToggle"] {
           transform: translateY(20px);
 
 
+
           li {
             display:block;
             margin:0;
             padding:0;
+            position:relative;
+
+
+            &:hover {
+              ul {
+                opacity:1;
+                visibility: visible;
+              }
+            }
 
             a {
               padding:15px;
-              min-width:100px;
+              min-width:150px;
               border:none;
+              background:$nav_subitem_background;
+              color:$nav_subitem_color;
 
               &:hover {
                 border:none;
@@ -124,6 +147,25 @@ label[for="menuToggle"] {
               }
             }
 
+            ul {
+              position:absolute;
+              top:0;
+              left:100%;
+              opacity:0;
+              visibility: hidden;
 
-        }}}}}}}
+            }
+
+
+
+        }}}
+    li:last-child {
+      ul {
+        ul {
+          left:-150px;
+        }
+      }
+    }
+
+    }}}}
 

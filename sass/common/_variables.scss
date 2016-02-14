@@ -1,4 +1,4 @@
-$body_background:#eee;
+$body_background:#FFF;
 $text_color:#444;
 
 //media
@@ -7,30 +7,42 @@ $medium:new-breakpoint(min-width 992px);
 $large:new-breakpoint(min-width 1200px);
 
 //header
-$header_background_color:#FFF;
+$header_background_color:#EEE;
 
 
 //navigation
 $nav_background:#FFF;
-$nav_border:2px solid $header_color;
+$nav_border:2px solid $header_background_color;
 $nav_color:#444;
 $nav_border_hover:2px solid $nav_color;
-$nav_subitem_background_hover:#666;
+$nav_subitem_background:#666;
+$nav_subitem_color:#FFF;
+$nav_subitem_background_hover:#333;
 $nav_subitem_color_hover:#eee;
+
+
+//footer
+$footer_background:#666;
+$footer_color:#FFF;
 
 
 
 
 //responsive version variables
 
+  //header
+$header_background_resp:#EEE;
+
   //navigation
 $nav_background_resp:#444;
 $nav_text_color_resp:#FFF;
-$header_color_resp:#aaa;
 $nav_border_resp:1px solid #333;
 $nav_text_color_active_resp:#000;
 $nav_background_color_active_resp:#FFF;
 $nav_text_color_hover_resp:#eee;
 $nav_background_color_hover_resp:#666;
 $menu_toggle_color:#444;
+
+  //footer
+$footer_background_resp:#666;
 

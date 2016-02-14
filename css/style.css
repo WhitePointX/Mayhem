@@ -4,26 +4,6 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-body {
-  background: #eee;
-  color: #444; }
-
-.container {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto; }
-  .container::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-.row {
-  display: block; }
-  .row::after {
-    clear: both;
-    content: "";
-    display: table; }
-
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -379,51 +359,144 @@ td,
 th {
   padding: 0; }
 
-.siteHeader {
-  background: #aaa; }
-  .siteHeader::after {
+body {
+  background: #FFF;
+  color: #444; }
+
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+  .container::after {
     clear: both;
     content: "";
     display: table; }
 
+.row {
+  display: block; }
+  .row::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.fixed {
+  background: #EEE;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; }
+  .fixed::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.header_contact {
+  position: static;
+  text-align: center;
+  padding: 10px;
+  color: #FFF;
+  font-size: 20px;
+  border-bottom: 1px solid #333; }
+  .header_contact i {
+    cursor: pointer;
+    padding: 5px; }
+  .header_contact a {
+    text-decoration: none;
+    color: #FFF; }
+
 #logo {
-  padding: 60px 0;
   max-width: 250px;
   margin: 0 auto; }
   #logo img {
     max-width: 100%;
     text-align: center;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #333; }
+    background: #EEE;
+    padding: 10px 0; }
 
 @media screen and (min-width: 992px) {
-  .siteHeader {
-    background: #FFF; }
-    .siteHeader .container {
-      position: relative; }
+  .siteHeader .fixed {
+    background: #EEE;
+    box-shadow: 0 0 3px #eee; }
+  .siteHeader .container {
+    position: relative; }
   #logo {
-    z-index: 1100;
-    position: absolute;
-    left: 30px;
-    top: 0;
+    z-index: 1000;
+    float: left;
     padding: 0;
-    max-width: 225px; }
+    max-width: 15%; }
+    #logo a {
+      padding: 20px 0 10px 0;
+      display: block;
+      -webkit-transition: 300ms;
+      transition: 300ms; }
+      #logo a:hover {
+        opacity: 0.8; }
     #logo img {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0; } }
+      padding: 0;
+      border-radius: 0;
+      background: #EEE; }
+  .header_contact {
+    position: fixed;
+    left: 350px;
+    top: 8px;
+    font-size: 0;
+    color: #444;
+    border-bottom: none;
+    padding: 0; }
+    .header_contact a {
+      text-decoration: none;
+      color: #444; }
+    .header_contact i {
+      border-bottom: 2px solid #EEE;
+      font-size: 18px;
+      display: inline-block;
+      padding: 15px; }
+      .header_contact i:hover {
+        border-bottom: 2px solid #444; } }
+
+.footer_wrapper {
+  background: #666;
+  font-size: 25px;
+  color: #FFF;
+  padding: 20px 0; }
+  .footer_wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .footer_wrapper .company_name {
+    padding: 0 10px; }
+  .footer_wrapper .address {
+    font-size: 17px;
+    padding: 10px 10px; }
+  .footer_wrapper .footer_contact {
+    float: right; }
+    .footer_wrapper .footer_contact i {
+      padding: 10px; }
+    .footer_wrapper .footer_contact a {
+      text-decoration: none;
+      color: #FFF;
+      -webkit-transition: 300ms;
+      transition: 300ms; }
+      .footer_wrapper .footer_contact a:hover {
+        opacity: 0.6; }
+
+@media screen and (min-width: 992px) {
+  .footer_wrapper {
+    background: #666; }
+    .footer_wrapper .foooter_contact i {
+      padding: 15px; } }
 
 .mainNav .nav {
   position: fixed;
   background: #444;
-  top: 60px;
+  top: 67px;
   width: 250px;
   bottom: 0;
   right: -250px;
   -webkit-transition: 300ms;
   transition: 300ms;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  z-index: 100; }
   .mainNav .nav ul {
     margin: 0;
     padding: 0; }
@@ -443,6 +516,8 @@ th {
           background: #666; }
       .mainNav .nav ul li li a {
         padding: 15px 35px; }
+      .mainNav .nav ul li li ul a {
+        padding: 15px 45px; }
 
 #menuToggle {
   display: none; }
@@ -451,9 +526,9 @@ label[for="menuToggle"] {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
   color: #444;
-  font-size: 30px; }
+  font-size: 30px;
+  cursor: pointer; }
 
 #menuToggle:checked + .nav {
   right: 0; }
@@ -462,20 +537,17 @@ label[for="menuToggle"] {
   label[for="menuToggle"] {
     display: none; }
   .mainNav .nav {
-    position: relative;
-    width: auto;
-    top: 0;
-    bottom: auto;
+    position: absolute;
+    bottom: 0;
     right: 0;
-    left: 0;
+    top: auto;
+    width: auto;
     overflow-y: visible;
-    background: white; }
+    background: #EEE; }
     .mainNav .nav ul {
-      float: right;
       font-size: 0; }
       .mainNav .nav ul li {
         display: inline-block;
-        margin-right: 10px;
         position: relative;
         font-size: 16px; }
         .mainNav .nav ul li:last-child {
@@ -485,13 +557,16 @@ label[for="menuToggle"] {
           opacity: 1;
           -webkit-transform: translateY(0);
                   transform: translateY(0); }
+          .mainNav .nav ul li:hover ul ul {
+            visibility: hidden;
+            opacity: 0; }
         .mainNav .nav ul li a {
           color: #444;
-          background: #FFF;
+          background: #EEE;
           padding: 15px;
-          border-bottom: 2px solid #FFF; }
+          border-bottom: 2px solid #EEE; }
           .mainNav .nav ul li a:hover {
-            background: #FFF;
+            background: #EEE;
             border-bottom: 2px solid #444;
             color: #444; }
         .mainNav .nav ul li ul {
@@ -507,15 +582,29 @@ label[for="menuToggle"] {
           .mainNav .nav ul li ul li {
             display: block;
             margin: 0;
-            padding: 0; }
+            padding: 0;
+            position: relative; }
+            .mainNav .nav ul li ul li:hover ul {
+              opacity: 1;
+              visibility: visible; }
             .mainNav .nav ul li ul li a {
               padding: 15px;
-              min-width: 100px;
-              border: none; }
+              min-width: 150px;
+              border: none;
+              background: #666;
+              color: #FFF; }
               .mainNav .nav ul li ul li a:hover {
                 border: none;
-                background: #666;
-                color: #eee; } }
+                background: #333;
+                color: #eee; }
+            .mainNav .nav ul li ul li ul {
+              position: absolute;
+              top: 0;
+              left: 100%;
+              opacity: 0;
+              visibility: hidden; }
+      .mainNav .nav ul li:last-child ul ul {
+        left: -150px; } }
 
 @font-face {
   font-family: 'icomoon';
@@ -551,3 +640,6 @@ label[for="menuToggle"] {
 
 .icon-menu:before {
   content: "\f0c9"; }
+
+.icon-search:before {
+  content: "\f002"; }

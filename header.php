@@ -10,48 +10,37 @@
 </head>
 <body>
 <header class="siteHeader">
+
+<div class="fixed">
     <div class="container">
+
 
         <div id="logo">
             <a href="<?php bloginfo('wpurl'); ?>">
                 <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="">
             </a>
         </div>
-        
+
+
+
+
+
         <nav class="mainNav" role="navigation">
-<label for="menuToggle"><i class="icon-menu"></i></label>
+            <label for="menuToggle"><i class="icon-menu"></i></label>
         <input type="checkbox" name="menuToggle" id="menuToggle">
+
             <div class="nav">
-            <ul>
-                <li><a href="#">Item 1</a>
+                <div class="header_contact">
+                    <a href="#">  <i class="icon-facebook"></i></a>
 
-                <ul>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Item 4</a></li>
-                    <li><a href="#">Item 5</a></li>
-                </ul>
+                    <a href="#">  <i class="icon-twitter"></i></a>
+                </div>
 
-                </li>
-                <li><a href="#">Item 2</a>
-                <ul>
-
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
-                <li><a href="#">Item 5</a></li>
-                </ul>
-                </li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
-                <li><a href="#">Item 5</a></li>
-
-
-            </ul>
+                <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
             </div>
         </nav>
 
     </div>
-
+</div>
 
 </header>
