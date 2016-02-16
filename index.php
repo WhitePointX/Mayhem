@@ -1,63 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); the_post(); ?>
 
 
 <div class="container">
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
-    content <br>
+    <h1><?php the_title(); ?></h1>
+    <?php the_content(); ?>
+
 </div>
 
 <?php get_footer(); ?>

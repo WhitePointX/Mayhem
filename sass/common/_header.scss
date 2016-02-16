@@ -44,6 +44,11 @@ text-align:center;
 }
 
 @include media($medium) {
+
+  .clean_fixed {
+    min-height:58px;
+  }
+
   .siteHeader {
 
 .fixed {

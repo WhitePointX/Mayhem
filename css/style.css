@@ -414,6 +414,8 @@ body {
     padding: 10px 0; }
 
 @media screen and (min-width: 992px) {
+  .clean_fixed {
+    min-height: 58px; }
   .siteHeader .fixed {
     background: #EEE;
     box-shadow: 0 0 3px #eee; }
