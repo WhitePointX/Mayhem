@@ -1,0 +1,28 @@
+
+//CTA
+.CTA {
+  text-align:center;
+  margin:55px 0;
+
+  a {
+    background:$cta_background;
+    padding:20px;
+    color:$cta_color;
+    text-decoration:none;
+    font-size:20px;
+    transition:300ms;
+    text-transform: uppercase;
+
+    &:hover {
+      background:$cta_background_hover;
+      color:$cta_color_hover;
+    }
+  }
+}
+
+//Heading
+.heading {
+  text-align:center;
+  font-size:50px;
+  color:$heading_color;
+}

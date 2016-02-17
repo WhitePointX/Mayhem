@@ -21,7 +21,11 @@
             </a>
         </div>
 
+        <div class="header_contact">
+            <a href="#">  <i class="icon-facebook"></i></a>
 
+            <a href="#">  <i class="icon-twitter"></i></a>
+        </div>
 
 
 
@@ -30,7 +34,8 @@
         <input type="checkbox" name="menuToggle" id="menuToggle">
 
             <div class="nav">
-                <div class="header_contact">
+
+                <div class="header_contact_resp">
                     <a href="#">  <i class="icon-facebook"></i></a>
 
                     <a href="#">  <i class="icon-twitter"></i></a>

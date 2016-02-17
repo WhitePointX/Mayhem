@@ -1,3 +1,7 @@
+.clean_fixed {
+  min-height:67px;
+}
+
 .siteHeader{
 
 
@@ -10,8 +14,8 @@
   top:0;
   @include clearfix;
 }
-
-.header_contact {
+.header_contact{display:none;}
+.header_contact_resp {
   position:static;
 text-align:center;
   padding:10px;
@@ -84,10 +88,11 @@ text-align:center;
 
 
   }
-
+.header_contact_resp{display:none;}
   .header_contact {
-    position:fixed;
-    left:350px;
+    display:block;
+    position:absolute;
+    left:145px;
     top:8px;
     font-size:0;
     color:$nav_color;
