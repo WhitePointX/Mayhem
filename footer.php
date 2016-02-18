@@ -10,13 +10,20 @@
 <div class="address">
  Example Address, 1807 Glenwood St NE, Palm Bay FL 32907
 </div>
- <div class="footer_contact">
-  <a href="#"><i class="icon-facebook"></i></a>
-  <a href="#"><i class="icon-twitter"></i></a>
-  <a href="#"><i class="icon-mail"></i></a>
-  <a href="#"><i class="icon-phone"></i></a>
+  <?php if( have_rows('header_contact_icons', 'options') ): ?>
 
- </div>
+    <div class="footer_contact">
+
+    <?php while( have_rows('footer_contact_icons', 'options') ): the_row(); ?>
+
+
+        <a href="<?php the_sub_field('url'); ?>" target="_blank">  <i class="icon-<?php the_sub_field('icon'); ?>"></i></a>
+
+    <?php endwhile; ?>
+
+    </div>
+
+<?php endif; ?>  
 
  </div>
 </div>

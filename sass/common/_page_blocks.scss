@@ -35,7 +35,7 @@
 
   i {
     font-size:30px;
-    color:#aaa;
+    color:$quote_icon_color;
   }
 }
 .quote {
@@ -44,13 +44,21 @@
   font-style: italic;
   line-height: 1.45;
   position: relative;
-  color: #383838;
+  color: $quote_color;
   margin:0;
   padding:10px;
 }
-.cite {color:#999;}
+.cite {color:$quote_author_color;}
 @include media($medium){
   .quote_wrapper {
     i{position:absolute;left:-40px;}
   }
+}
+
+// Classic WYSIWYG
+.classic_wysiwyg {
+  max-width:800px;
+  width:100%;
+  margin:20px auto;
+  padding:20px;
 }

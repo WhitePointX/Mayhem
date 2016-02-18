@@ -21,11 +21,25 @@
             </a>
         </div>
 
-        <div class="header_contact">
-            <a href="#">  <i class="icon-facebook"></i></a>
 
-            <a href="#">  <i class="icon-twitter"></i></a>
-        </div>
+<?php if( have_rows('header_contact_icons', 'options') ): ?>
+
+    <div class="header_contact">
+
+    <?php while( have_rows('header_contact_icons', 'options') ): the_row(); ?>
+
+
+        <a href="<?php the_sub_field('url'); ?>" target="_blank">  <i class="icon-<?php the_sub_field('icon'); ?>"></i></a>
+
+    <?php endwhile; ?>
+
+    </div>
+
+<?php endif; ?>   
+            
+
+          
+        
 
 
 
@@ -35,11 +49,20 @@
 
             <div class="nav">
 
-                <div class="header_contact_resp">
-                    <a href="#">  <i class="icon-facebook"></i></a>
+                <?php if( have_rows('header_contact_icons', 'options') ): ?>
 
-                    <a href="#">  <i class="icon-twitter"></i></a>
-                </div>
+    <div class="header_contact_resp">
+
+    <?php while( have_rows('header_contact_icons', 'options') ): the_row(); ?>
+
+
+        <a href="<?php the_sub_field('url'); ?>" target="_blank">  <i class="icon-<?php the_sub_field('icon'); ?>"></i></a>
+
+    <?php endwhile; ?>
+
+    </div>
+
+<?php endif; ?>  
 
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
             </div>

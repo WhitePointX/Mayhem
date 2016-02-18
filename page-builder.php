@@ -62,6 +62,14 @@ Template name: Page builder
                 </blockquote>
                 </div>
 
+            <?php // WYSIWYG Field
+            elseif(get_row_layout()== 'wysiwyg_field'):
+            ?>              
+                <div class="classic_wysiwyg">
+                    <?php the_sub_field('content');?>
+                </div>
+              
+
 
 
 
@@ -80,4 +88,5 @@ Template name: Page builder
 
 
 <?php get_footer(); ?>
+
 

@@ -5,4 +5,6 @@ function registriraj_menu() {
 }
 add_action( 'init', 'registriraj_menu' );
 
+register_options_page('Global');
+
 ?>

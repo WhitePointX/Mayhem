@@ -1218,7 +1218,8 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  top: 0; }
+  top: 0;
+  z-index: 1000; }
   .fixed::after {
     clear: both;
     content: "";
@@ -1565,3 +1566,9 @@ label[for="menuToggle"] {
   .quote_wrapper i {
     position: absolute;
     left: -40px; } }
+
+.classic_wysiwyg {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px; }

@@ -28,7 +28,7 @@ $footer_color:#FFF;
 
 //PAGE BLOCKS
 
-    //CTA
+  //CTA
 $cta_background:#EEE;
 $cta_color:#666;
 $cta_background_hover:#666;
@@ -37,12 +37,17 @@ $cta_color_hover:#EEE;
   //Heading
 $heading_color:#666;
 
-//responsive version variables
+	//Quote
+$quote_color:#383838;
+$quote_icon_color:#aaa;
+$quote_author_color:#999;
 
-  //header
+// RESPONSIVE VARIABLES
+
+  // header
 $header_background_resp:#EEE;
 
-  //navigation
+	// navigation
 $nav_background_resp:#444;
 $nav_text_color_resp:#FFF;
 $nav_border_resp:1px solid #333;
@@ -52,6 +57,6 @@ $nav_text_color_hover_resp:#eee;
 $nav_background_color_hover_resp:#666;
 $menu_toggle_color:#444;
 
-  //footer
+	// footer
 $footer_background_resp:#666;
 
