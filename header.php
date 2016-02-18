@@ -30,7 +30,7 @@
 
 
         <nav class="mainNav" role="navigation">
-            <label for="menuToggle"><i class="icon-menu"></i></label>
+            <label for="menuToggle"><i class="icon-menu2"></i></label>
         <input type="checkbox" name="menuToggle" id="menuToggle">
 
             <div class="nav">

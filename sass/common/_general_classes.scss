@@ -2,12 +2,3 @@ body {
 background:$body_background;
 color:$text_color;
 }
-
-
-.container {
-@include outer_container(960px);
-}
-
-.row {
-@include row();
-}

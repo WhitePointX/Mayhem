@@ -26,3 +26,31 @@
   font-size:50px;
   color:$heading_color;
 }
+
+// Quote
+.quote_wrapper {
+  margin:20px auto;
+  max-width: 500px;
+  position:relative;
+
+  i {
+    font-size:30px;
+    color:#aaa;
+  }
+}
+.quote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  margin:0;
+  padding:10px;
+}
+.cite {color:#999;}
+@include media($medium){
+  .quote_wrapper {
+    i{position:absolute;left:-40px;}
+  }
+}

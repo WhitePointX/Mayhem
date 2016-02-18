@@ -92,8 +92,8 @@ text-align:center;
   .header_contact {
     display:block;
     position:absolute;
-    left:145px;
-    top:8px;
+    left:170px;
+    top:4px;
     font-size:0;
     color:$nav_color;
     border-bottom:none;
@@ -114,5 +114,12 @@ text-align:center;
         border-bottom:$nav_border_hover;
       }
     }
+  }
+}
+
+@include media($large) {
+  .header_contact {
+    left: 195px;
+    top: 9px;
   }
 }

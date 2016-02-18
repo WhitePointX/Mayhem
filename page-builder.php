@@ -3,7 +3,7 @@
 Template name: Page builder
 */
 ?>
-<div class="container">
+
 
     <?php
     // START: have rows
@@ -26,7 +26,6 @@ Template name: Page builder
                 <a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('button_label'); ?></a>
             </p>
 
-
             <?php //HEADING
             elseif( get_row_layout() == 'heading' ): ?>
 
@@ -35,9 +34,38 @@ Template name: Page builder
             </h1>
 
 
+            <?php //GRID
+        elseif( get_row_layout() == 'grid' ): ?>
+        <div class="<?php the_sub_field('classic_or_fluid'); ?>">
+            <div class="row">
+                 <?php if( have_rows('column') ): while ( have_rows('column') ) : the_row(); ?>
 
 
-        <?php
+                    <div class="<?php the_sub_field('cs_xs');?> <?php the_sub_field('cs_sm');?> <?php the_sub_field('cs_md');?> <?php the_sub_field('cs_lg');?> <?php the_sub_field('custom_classes');?>">
+
+                                <?php the_sub_field('content'); ?>
+                    </div>
+
+                  <?php endwhile;  endif; ?>
+            </div>
+        </div>
+
+            <?php // Quote
+            elseif(get_row_layout()== 'quote'):
+            ?>
+                <div class="quote_wrapper">
+
+                <blockquote class="quote">
+                    <i class="icon-quote-left"></i>
+                    <?php the_sub_field('quote');?>
+                    <cite class="cite">- <?php the_sub_field('author');?></cite>
+                </blockquote>
+                </div>
+
+
+
+
+                <?php
         //endif (get_row_layout)
         endif; ?>
         <?php
@@ -51,7 +79,5 @@ Template name: Page builder
     endif; ?>
 
 
-</div>
 <?php get_footer(); ?>
-
 

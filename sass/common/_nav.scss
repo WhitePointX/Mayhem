@@ -88,10 +88,10 @@ label[for="menuToggle"] {
         display:inline-block;
         position:relative;
         font-size:16px;
-        &:last-child {margin-right:0;}
-        &:hover { ul { visibility: visible; opacity:1; transform: translateY(0);
 
-        ul {visibility:hidden;opacity:0;}
+        &:hover { ul { visibility: visible; opacity:1; transform: translateY(4px);
+
+        ul {visibility:hidden;opacity:0;transform: translateY(0);}
         } }
 
         a {
@@ -116,6 +116,7 @@ label[for="menuToggle"] {
           top:50px;
           transition:300ms;
           transform: translateY(20px);
+
 
 
 
@@ -154,6 +155,7 @@ label[for="menuToggle"] {
               opacity:0;
               visibility: hidden;
 
+
             }
 
 
@@ -161,8 +163,12 @@ label[for="menuToggle"] {
         }}}
     li:last-child {
       ul {
+          left:auto;
+        right:0;
+
         ul {
           left:-150px;
+          right:auto;
         }
       }
     }
