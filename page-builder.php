@@ -1,9 +1,9 @@
+<?php $GLOBALS['carousel_number']=0; $GLOBALS['carousel_skup']=[];$GLOBALS['carousel_custom']='';?>
 <?php get_header(); the_post();
 /*
 Template name: Page builder
 */
 ?>
-
 
     <?php
     // START: have rows
@@ -71,9 +71,7 @@ Template name: Page builder
 
             <?php //Slider
             elseif(get_row_layout() == 'slider'):
-                if(have_rows('slide')):
-
-                    ?>
+                if(have_rows('slide')):?>
                 <div class="slider">
                    <?php
                     while(have_rows('slide')): the_row();?>
@@ -111,9 +109,42 @@ Template name: Page builder
                 </div>
                     <?php endwhile; ?>
                 </div>
-
-
                     <?php endif; ?>
+
+
+                <?php //Carousel
+                elseif(get_row_layout() == 'carousel'):
+
+
+                    if(have_rows('item')):?>
+
+                    <div id="carousel<?php echo $GLOBALS['carousel_number'] ?>">
+
+
+                        <?php while(have_rows('item')):the_row(); ?>
+
+                            <div>
+                                <?php the_sub_field('content'); ?>
+                            </div>
+
+
+                        <?php endwhile; ?>
+
+                    </div>
+                    <?php endif; ?>
+
+
+                    <?php $GLOBALS['carousel_custom']=get_sub_field('custom');
+                    /*$GLOBALS['carousel_skup'][$GLOBALS['carousel_number']]=$GLOBALS['carousel_custom'];*/
+
+                    array_push($GLOBALS['carousel_skup'],$GLOBALS['carousel_custom']);
+                    $GLOBALS['carousel_number']++;
+
+                    ?>
+
+
+
+
 
 
 

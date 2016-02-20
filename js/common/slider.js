@@ -4,8 +4,7 @@ $(document).ready(function() {
         pagination:true,
         slideSpeed : 300,
         paginationSpeed : 400
-
-
     });
+
 
 });

@@ -32,6 +32,7 @@
 
  <script src="<?php bloginfo('template_directory'); ?>/js/scripts.min.js"></script>
 
+<?php include 'carousel_script.php'; ?>
 
 
 
@@ -46,3 +47,4 @@
 
 
 </html>
+
