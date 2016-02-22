@@ -1342,7 +1342,8 @@ th {
 
 body {
   background: #FFF;
-  color: #444; }
+  color: #444;
+  font-family: "Open Sans", sans-serif; }
 
 .clean_fixed {
   min-height: 67px; }
@@ -1579,6 +1580,13 @@ label[for="menuToggle"] {
                 border: none;
                 background: #333;
                 color: #eee; }
+              .mainNav .nav ul li ul li a:after {
+                position: absolute;
+                right: 5px;
+                content: '\25b8'; }
+              .mainNav .nav ul li ul li a:only-child:after {
+                margin-left: 0;
+                content: ''; }
             .mainNav .nav ul li ul li ul {
               position: absolute;
               top: 0;
@@ -1717,7 +1725,7 @@ label[for="menuToggle"] {
     padding-top: 20px;
     width: 80%; }
     .slider .slider_item .title h1 {
-      color: white;
+      color: #FFF;
       text-transform: uppercase;
       background: rgba(0, 0, 0, 0.5);
       font-weight: 600;
@@ -1725,7 +1733,7 @@ label[for="menuToggle"] {
       margin: 0; }
     .slider .slider_item .title p {
       background: rgba(0, 0, 0, 0.5);
-      color: white;
+      color: #FFF;
       font-size: 18px;
       margin: 0;
       margin-top: 10px;

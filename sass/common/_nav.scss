@@ -1,7 +1,6 @@
 .mainNav{
 
   .nav {
-
     position:fixed;
     background:$nav_background_resp;
     top:67px;
@@ -12,40 +11,40 @@
     overflow-y:scroll;
     z-index:100;
 
-  ul{
-    margin:0;
-    padding:0;
+    ul{
+      margin:0;
+      padding:0;
 
 
-    li{
-      display:block;
+       li{
+          display:block;
 
-      a{
-        display:block;
-        padding: 15px 20px;
-        text-decoration: none;
-        color:$nav_text_color_resp;
-        border-bottom:$nav_border_resp;
-        &:active {
-                    color:$nav_text_color_active_resp;
-                    background:$nav_background_color_active_resp;
-                 }
+          a{
+            display:block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color:$nav_text_color_resp;
+            border-bottom:$nav_border_resp;
+            &:active {
+                      color:$nav_text_color_active_resp;
+                      background:$nav_background_color_active_resp;
+                   }
 
-        &:hover  {
-                    color:$nav_text_color_hover_resp;
-                     background:$nav_background_color_hover_resp;
-                 }
+          &:hover  {
+                      color:$nav_text_color_hover_resp;
+                       background:$nav_background_color_hover_resp;
+                   }
 
-      }
+        }
 
-         li {
-               a{ padding:15px 35px;}
-           ul {
-             a {
-               padding:15px 45px;
+           li {
+                 a{ padding:15px 35px;}
+             ul {
+               a {
+                 padding:15px 45px;
+               }
              }
-           }
-            }
+              }
 
     }}}}
 
@@ -146,6 +145,11 @@ label[for="menuToggle"] {
                 background:$nav_subitem_background_hover;
                 color:$nav_subitem_color_hover;
               }
+
+              &:after {
+              position:absolute; right:5px; content: '\25b8';
+            }
+              &:only-child:after { margin-left: 0; content: '';}
             }
 
             ul {

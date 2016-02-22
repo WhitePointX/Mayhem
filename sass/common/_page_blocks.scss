@@ -80,17 +80,17 @@
       width:80%;
 
       h1 {
-        color:white;
+        color:$slider_h1_color;
         text-transform: uppercase;
-        background: rgba(0, 0, 0, 0.5);
+        background:$slider_h1_p_background;
         font-weight:600;
         font-size:30px;
         margin:0;
       }
 
       p {
-        background: rgba(0, 0, 0, 0.5);
-        color:white;
+        background:$slider_h1_p_background;
+        color:$slider_p_color;
         font-size:18px;
         margin:0;
         margin-top:10px;

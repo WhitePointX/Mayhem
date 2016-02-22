@@ -1,5 +1,6 @@
 $body_background:#FFF;
 $text_color:#444;
+$body_font: 'Open Sans', sans-serif;
 
 //media
 $tablet:new-breakpoint(min-width 768px);
@@ -47,6 +48,9 @@ $slider_CTA_background:#EEE;
 $slider_CTA_color:#666;
 $slider_CTA_background_resp:#666;
 $slider_CTA_color_resp:#EEE;
+$slider_h1_p_background:rgba(0, 0, 0, 0.5);
+$slider_h1_color:#FFF;
+$slider_p_color:#FFF;
 
 // RESPONSIVE VARIABLES
 
