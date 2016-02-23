@@ -1,5 +1,5 @@
 .clean_fixed {
-  min-height:67px;
+  min-height:63px;
 }
 
 .siteHeader{
@@ -51,7 +51,7 @@ text-align:center;
 @include media($medium) {
 
   .clean_fixed {
-    min-height:58px;
+    min-height:54px;
   }
 
   .siteHeader {
@@ -122,5 +122,8 @@ text-align:center;
   .header_contact {
     left: 195px;
     top: 9px;
+  }
+  .clean_fixed {
+    min-height:59px;
   }
 }

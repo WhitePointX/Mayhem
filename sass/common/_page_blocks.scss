@@ -1,24 +1,63 @@
 
 //CTA
-.CTA {
-  text-align:center;
-  margin:55px 0;
 
+.CTA{
+  text-align:center;
+  margin: 0;
+  background:$cta_background;
+  padding:20px 0;
   a {
-    background:$cta_background;
+    background:$cta_link_background;
     padding:20px;
-    color:$cta_color;
+    color:$cta_link_color;
     text-decoration:none;
     font-size:20px;
     transition:300ms;
     text-transform: uppercase;
+    border-radius:5px;
+    display:block;
+    margin-top:10px;
 
     &:hover {
-      background:$cta_background_hover;
-      color:$cta_color_hover;
+      background:$cta_link_background_hover;
+      color:$cta_link_color_hover;
+
     }
   }
+  p {
+    font-size:30px;
+    color:$cta_text_color;
+    font-weight:bold;
+    margin:0;
+    padding:20px 0;
+  }
+
 }
+@include media($medium) {
+
+  .CTA {
+
+    a {
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translate(0,-50%);
+      margin:0;
+      display:inline;
+
+
+
+    }
+    p {
+      position:relative;
+
+
+
+    }
+  }
+
+}
+
 
 //Heading
 .heading {
@@ -69,32 +108,46 @@
 .slider {
 
   .slider_item {
+    position:relative;
     height: 0;
     max-height: 50vh;
     min-height: 300px;
     text-align:center;
+    img {
+      width:100%;
+      height:auto;
+    }
 
     .title {
-      margin: 0 auto;
-      padding-top:20px;
-      width:80%;
 
       h1 {
+        position:absolute;
+        top:10px;
+        left: 50%;
+        margin:0;
+        margin-right: -50%;
+        transform: translate(-50%,0);
         color:$slider_h1_color;
         text-transform: uppercase;
         background:$slider_h1_p_background;
         font-weight:600;
         font-size:30px;
-        margin:0;
+        width:80%;
+
       }
 
       p {
+        position:absolute;
+        top:70px;
+        left: 50%;
+        margin:0;
+        margin-right: -50%;
+        transform: translate(-50%,0);
         background:$slider_h1_p_background;
         color:$slider_p_color;
         font-size:18px;
-        margin:0;
-        margin-top:10px;
         padding:10px;
+        width:80%;
       }
 
 
@@ -106,6 +159,8 @@
       text-align:center;
       width:100%;
       a {
+        min-width:300px;
+        display:inline-block;
         padding:10px 20px;
         text-decoration:none;
         font-size:20px;
@@ -140,7 +195,11 @@
         h1 {
           font-size: 51px;
           padding: 21px 10px;
+          top:50px;
 
+        }
+        p {
+          top:190px;
         }
 
       }

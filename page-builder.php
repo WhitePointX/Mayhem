@@ -22,9 +22,20 @@ Template name: Page builder
             <?php //CTA
             elseif( get_row_layout() == 'cta' ): ?>
 
-            <p class="CTA <?php the_sub_field('custom_class'); ?>">
-                <a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('button_label'); ?></a>
-            </p>
+            <div class="CTA <?php the_sub_field('custom_class'); ?>">
+                <div class="container">
+
+                    <p><?php if(get_sub_field('text')): ?>
+
+                    <?php the_sub_field('text'); ?><?php endif;?>
+                        <a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('button_label'); ?></a>
+                    </p>
+
+
+
+                </div>
+
+            </div>
 
             <?php //HEADING
             elseif( get_row_layout() == 'heading' ): ?>
@@ -81,7 +92,8 @@ Template name: Page builder
                         ?>
 
 
-                <div class="slider_item" style="background-image: url('<?php echo $bgImage[0]; ?>');">
+                <div class="slider_item">
+                    <img src="<?php echo $bgImage[0]; ?>" alt="">
 
                     <?php
                     if(get_sub_field('title') || get_sub_field('description')):
