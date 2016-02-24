@@ -40,10 +40,11 @@ text-align:center;
   max-width:250px;
   margin:0 auto;
   img {
-    max-width:100%;
+    width:100%;
   text-align:center;
     background:$header_background_resp;
     padding:10px 0;
+    height:auto;
 
   }
 }

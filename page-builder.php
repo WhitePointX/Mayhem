@@ -92,10 +92,15 @@ Template name: Page builder
                         ?>
 
 
-                <div class="slider_item">
-                    <img src="<?php echo $bgImage[0]; ?>" alt="">
 
-                    <?php
+                    <div class="slider_item" style="background-image: url('<?php echo $bgImage[0]; ?>');
+                    <?php if(get_sub_field('background_position')): ?>
+
+                        background-position:<?php the_sub_field('background_position'); ?>;
+
+                    <?php endif; ?>)">
+
+                        <?php
                     if(get_sub_field('title') || get_sub_field('description')):
                     ?>
                        <div class="title">
@@ -153,6 +158,48 @@ Template name: Page builder
                     $GLOBALS['carousel_number']++;
 
                     ?>
+
+
+                    <?php // News feed
+                    elseif(get_row_layout()=='news_feed'):?>
+                        <?php
+                        $posts = get_posts(array(
+                            'posts_per_page'	=> 3,
+                            'post_type'			=> 'post'
+                        ));
+
+                        if( $posts ): ?>
+
+                           <div class="container">
+                               <div class="row">
+
+
+
+                                <?php foreach( $posts as $post ):
+
+                                    setup_postdata( $post )
+
+                                    ?>
+                                    <article class="col-xs-12 col-md-4">
+                                        <a href="<?php the_permalink(); ?>">
+                                        <?php if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail('small-thumbnail');
+                                        }  ?>
+
+                                        <h2><?php the_title(); ?></h2></a>
+                                        <?php the_excerpt(); ?>
+                                        <a href="<?php the_permalink(); ?>">Read more...</a>
+                                    </article>
+
+                                <?php endforeach; ?>
+
+                           </div></div>
+
+                            <?php wp_reset_postdata(); ?>
+
+                        <?php endif; ?>
+
+
 
 
 

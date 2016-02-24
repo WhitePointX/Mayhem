@@ -71,10 +71,11 @@ html {
   margin-top: 10px;
   text-align: center; }
 
-.slider .owl-controls {
-  position: absolute;
-  bottom: 20px;
-  width: 100%; }
+@media screen and (min-width: 992px) {
+  .slider .owl-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%; } }
 
 /* Styling Next and Prev buttons */
 .owl-theme .owl-controls .owl-buttons div {
@@ -1381,10 +1382,11 @@ body {
   max-width: 250px;
   margin: 0 auto; }
   #logo img {
-    max-width: 100%;
+    width: 100%;
     text-align: center;
     background: #EEE;
-    padding: 10px 0; }
+    padding: 10px 0;
+    height: auto; }
 
 @media screen and (min-width: 992px) {
   .clean_fixed {
@@ -1741,44 +1743,31 @@ label[for="menuToggle"] {
   padding: 20px; }
 
 .slider .slider_item {
-  position: relative;
   height: 0;
   max-height: 50vh;
   min-height: 300px;
   text-align: center; }
-  .slider .slider_item img {
-    width: 100%;
-    height: auto; }
-  .slider .slider_item .title h1 {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    margin: 0;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    color: #FFF;
-    text-transform: uppercase;
-    background: rgba(0, 0, 0, 0.5);
-    font-weight: 600;
-    font-size: 30px;
+  .slider .slider_item .title {
+    margin: 0 auto;
+    padding-top: 20px;
     width: 80%; }
-  .slider .slider_item .title p {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    margin: 0;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    background: rgba(0, 0, 0, 0.5);
-    color: #FFF;
-    font-size: 18px;
-    padding: 10px;
-    width: 80%; }
+    .slider .slider_item .title h1 {
+      color: #FFF;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.5);
+      font-weight: 600;
+      font-size: 30px;
+      margin: 0; }
+    .slider .slider_item .title p {
+      background: rgba(0, 0, 0, 0.5);
+      color: #FFF;
+      font-size: 18px;
+      padding: 10px;
+      margin: 0;
+      margin-top: 10px; }
   .slider .slider_item .slider_CTA {
     position: absolute;
-    bottom: 55px;
+    bottom: 10px;
     text-align: center;
     width: 100%; }
     .slider .slider_item .slider_CTA a {
@@ -1800,15 +1789,14 @@ label[for="menuToggle"] {
   .slider .slider_item {
     height: 80vh;
     max-height: 620px;
-    min-height: 400px; }
+    min-height: 500px;
+    background-position: 50% 0%;
+    background-size: cover; }
     .slider .slider_item .title {
       width: 62%;
       padding-top: 80px; }
       .slider .slider_item .title h1 {
         font-size: 51px;
-        padding: 21px 10px;
-        top: 50px; }
-      .slider .slider_item .title p {
-        top: 190px; }
+        padding: 21px 10px; }
     .slider .slider_item .slider_CTA {
       bottom: 80px; } }

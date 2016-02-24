@@ -8,11 +8,15 @@
   text-align: center;
 }
 
-.slider .owl-controls {
-  position:absolute;
-  bottom:20px;
-  width:100%;
+
+@include media($medium) {
+  .slider .owl-controls {
+    position:absolute;
+    bottom:20px;
+    width:100%;
+  }
 }
+
 
 /* Styling Next and Prev buttons */
 

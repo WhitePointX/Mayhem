@@ -3,6 +3,8 @@
 //neat
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
+@import 'common/variables';
+
 //Owl Carousel
 @import 'common/owl.carousel';
 @import 'common/owl.theme';
@@ -11,7 +13,7 @@
 
 @import 'common/normalize';
 
-@import 'common/variables';
+
 
 @import 'common/general_classes';
 
