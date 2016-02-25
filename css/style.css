@@ -1739,8 +1739,10 @@ label[for="menuToggle"] {
 .classic_wysiwyg {
   max-width: 800px;
   width: 100%;
-  margin: 20px auto;
-  padding: 20px; }
+  margin: 0 auto; }
+  .classic_wysiwyg img {
+    max-width: 100%;
+    height: auto; }
 
 .slider .slider_item {
   height: 0;
@@ -1800,3 +1802,6 @@ label[for="menuToggle"] {
         padding: 21px 10px; }
     .slider .slider_item .slider_CTA {
       bottom: 80px; } }
+
+.news_feed img {
+  width: 100%; }

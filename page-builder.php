@@ -7,220 +7,58 @@ Template name: Page builder
 
     <?php
     // START: have rows
-    if( have_rows('blocks') ): while ( have_rows('blocks') ) : the_row(); ?>
+    if( have_rows('blocks') ):
+        while ( have_rows('blocks') ) : the_row();
 
+                //PAGE HEADER
+                 if( get_row_layout() == 'page_header' ):
+                include 'page_builder/page_header.php';
+                //CTA
+                elseif( get_row_layout() == 'cta' ):
+                include 'page_builder/cta.php';
 
+                //HEADING
+                elseif( get_row_layout() == 'heading' ):
+                include 'page_builder/heading.php';
 
-        <?php
-        //PAGE HEADER
-        if( get_row_layout() == 'page_header' ): ?>
+                //GRID
+                elseif( get_row_layout() == 'grid' ):
+                include 'page_builder/grid.php';
 
-            <h1><?php the_sub_field('title'); ?></h1>
+                // Quote
+                elseif(get_row_layout()== 'quote'):
+                include 'page_builder/quote.php';
 
+                // WYSIWYG Field
+                elseif(get_row_layout()== 'wysiwyg_field'):
+                include 'page_builder/wysiwyg.php';
 
+                //Slider
+                elseif(get_row_layout() == 'slider'):
+                include 'page_builder/slider.php';
 
-            <?php //CTA
-            elseif( get_row_layout() == 'cta' ): ?>
-
-            <div class="CTA <?php the_sub_field('custom_class'); ?>">
-                <div class="container">
-
-                    <p><?php if(get_sub_field('text')): ?>
-
-                    <?php the_sub_field('text'); ?><?php endif;?>
-                        <a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('button_label'); ?></a>
-                    </p>
-
-
-
-                </div>
-
-            </div>
-
-            <?php //HEADING
-            elseif( get_row_layout() == 'heading' ): ?>
-
-            <h1 class="heading <?php the_sub_field('custom_class'); ?>">
-                <?php the_sub_field('title'); ?>
-            </h1>
-
-
-            <?php //GRID
-        elseif( get_row_layout() == 'grid' ): ?>
-        <div class="<?php the_sub_field('classic_or_fluid'); ?>">
-            <div class="row">
-                 <?php if( have_rows('column') ): while ( have_rows('column') ) : the_row(); ?>
-
-
-                    <div class="<?php the_sub_field('cs_xs');?> <?php the_sub_field('cs_sm');?> <?php the_sub_field('cs_md');?> <?php the_sub_field('cs_lg');?> <?php the_sub_field('custom_classes');?>">
-
-                                <?php the_sub_field('content'); ?>
-                    </div>
-
-                  <?php endwhile;  endif; ?>
-            </div>
-        </div>
-
-            <?php // Quote
-            elseif(get_row_layout()== 'quote'):
-            ?>
-                <div class="quote_wrapper">
-
-                <blockquote class="quote">
-                    <i class="icon-quote-left"></i>
-                    <?php the_sub_field('quote');?>
-                    <cite class="cite">- <?php the_sub_field('author');?></cite>
-                </blockquote>
-                </div>
-
-            <?php // WYSIWYG Field
-            elseif(get_row_layout()== 'wysiwyg_field'):
-            ?>              
-                <div class="classic_wysiwyg">
-                    <?php the_sub_field('content');?>
-                </div>
-
-            <?php //Slider
-            elseif(get_row_layout() == 'slider'):
-                if(have_rows('slide')):?>
-                <div class="slider">
-                   <?php
-                    while(have_rows('slide')): the_row();?>
-                        <?php $attachment_id = get_sub_field('image');
-                        $bgImageSize = "thumb_1920x1080";
-                        $bgImage = wp_get_attachment_image_src( $attachment_id, $bgImageSize );
-                        ?>
-
-
-
-                    <div class="slider_item" style="background-image: url('<?php echo $bgImage[0]; ?>');
-                    <?php if(get_sub_field('background_position')): ?>
-
-                        background-position:<?php the_sub_field('background_position'); ?>;
-
-                    <?php endif; ?>)">
-
-                        <?php
-                    if(get_sub_field('title') || get_sub_field('description')):
-                    ?>
-                       <div class="title">
-
-                        <?php if(get_sub_field('title')): ?>
-                    <h1><?php the_sub_field('title') ?></h1>
-                        <?php endif; ?>
-
-                            <?php if(get_sub_field('description')): ?>
-                    <p><?php the_sub_field('description') ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-
-
-
-                    <?php if(get_sub_field('cta_label')): ?>
-                    <p class="slider_CTA">
-                        <a href="<?php the_sub_field('cta_url'); ?>"><?php the_sub_field('cta_label'); ?></a>
-                    </p>
-                    <?php endif; ?>
-
-                </div>
-                    <?php endwhile; ?>
-                </div>
-                    <?php endif; ?>
-
-
-                <?php //Carousel
+                //Carousel
                 elseif(get_row_layout() == 'carousel'):
+                include 'page_builder/carousel.php';
+
+                // News feed
+                elseif(get_row_layout()=='news_feed'):
+                include 'page_builder/news_feed.php';
 
 
-                    if(have_rows('item')):?>
+                //endif (get_row_layout)
+             endif;
 
-                    <div id="carousel<?php echo $GLOBALS['carousel_number'] ?>">
-
-
-                        <?php while(have_rows('item')):the_row(); ?>
-
-                            <div>
-                                <?php the_sub_field('content'); ?>
-                            </div>
-
-
-                        <?php endwhile; ?>
-
-                    </div>
-                    <?php endif; ?>
-
-
-                    <?php $GLOBALS['carousel_custom']=get_sub_field('custom');
-                    /*$GLOBALS['carousel_skup'][$GLOBALS['carousel_number']]=$GLOBALS['carousel_custom'];*/
-
-                    array_push($GLOBALS['carousel_skup'],$GLOBALS['carousel_custom']);
-                    $GLOBALS['carousel_number']++;
-
-                    ?>
-
-
-                    <?php // News feed
-                    elseif(get_row_layout()=='news_feed'):?>
-                        <?php
-                        $posts = get_posts(array(
-                            'posts_per_page'	=> 3,
-                            'post_type'			=> 'post'
-                        ));
-
-                        if( $posts ): ?>
-
-                           <div class="container">
-                               <div class="row">
-
-
-
-                                <?php foreach( $posts as $post ):
-
-                                    setup_postdata( $post )
-
-                                    ?>
-                                    <article class="col-xs-12 col-md-4">
-                                        <a href="<?php the_permalink(); ?>">
-                                        <?php if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail('small-thumbnail');
-                                        }  ?>
-
-                                        <h2><?php the_title(); ?></h2></a>
-                                        <?php the_excerpt(); ?>
-                                        <a href="<?php the_permalink(); ?>">Read more...</a>
-                                    </article>
-
-                                <?php endforeach; ?>
-
-                           </div></div>
-
-                            <?php wp_reset_postdata(); ?>
-
-                        <?php endif; ?>
-
-
-
-
-
-
-
-
-
-                <?php
-        //endif (get_row_layout)
-        endif; ?>
-        <?php
         // END: have rows loop
-         endwhile;?>
+        endwhile;
 
-        <?php else: the_content();?>
+        else: the_content();
 
-    <?php
+
     //END: if have rows
-    endif; ?>
+    endif;
 
 
-<?php get_footer(); ?>
+ get_footer(); ?>
 
 
