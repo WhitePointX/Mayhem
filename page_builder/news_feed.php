@@ -1,6 +1,6 @@
 <?php
 $posts = get_posts(array(
-    'posts_per_page'	=> 3,
+    'posts_per_page'	=> 4,
     'post_type'			=> 'post'
 ));
 
@@ -16,15 +16,16 @@ if( $posts ): ?>
                 setup_postdata( $post )
 
                 ?>
-                <article class="col-xs-12 col-md-4">
+                <article class="col-xs-12 col-md-3">
                     <a href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail() ) {
                             the_post_thumbnail('small-thumbnail');
                         }  ?>
+                        <?php if(get_field('subtitle')):?><h4><?php the_field('subtitle');?></h4><?php endif; ?>
+                    </a>
 
-                        <h2><?php the_title(); ?></h2></a>
-                    <p><?php if(get_field('subtitle')): the_field('subtitle'); endif; ?></p>
-                    <a href="<?php the_permalink(); ?>">Read more...</a>
+                    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+
                 </article>
 
             <?php endforeach; ?>

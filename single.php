@@ -1,8 +1,6 @@
 <?php $GLOBALS['carousel_number']=0; $GLOBALS['carousel_skup']=[];$GLOBALS['carousel_custom']='';?>
 <?php get_header(); the_post();
-/*
-Template name: Post builder
-*/
+
 ?>
 <div class="container">
     <div class="classic_wysiwyg">

@@ -99,6 +99,7 @@
   max-width:800px;
   width:100%;
   margin:0 auto;
+  padding:10px;
   img {
     max-width:100%;
     height:auto;
@@ -201,6 +202,43 @@
 }
 
 //News feed
-.news_feed img {
-  width:100%;
+.news_feed {
+  @include clearfix;
+  a:hover {
+    text-decoration:none;
+  }
+  img {
+    float:left;
+    width:50%;
+    height:auto;
+    margin-bottom:10px;
+    margin-right:5px;
+  }
+  h4 {
+       margin:0;
+
+       background:#333;
+       color:white;
+       padding:5px;
+     }
+  h3 {
+    margin:5px;
+  }
+}
+@include media($medium)
+{
+  .news_feed{
+
+    img {
+      width:100%;
+      float:none;
+      margin:0;
+    }
+    h3 {
+      margin:0;
+      margin-top:5px;
+    }
+
+
+  }
 }
